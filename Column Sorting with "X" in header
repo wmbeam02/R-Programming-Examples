@@ -1,0 +1,1 @@
+dataSub=data[,grep('^XX', x = names(data) )]
