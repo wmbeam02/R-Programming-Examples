@@ -1,19 +1,28 @@
-#Here are several ways to pull out new df's from a larger table
-#The first example uses a column that has a T/F factor variable in it. Remember to put a comma after the argument(s) to pull every
-#row with that logic for all columns
+# Here are several ways to pull out new df's from a larger table
+# The first example uses a column that has a T/F factor variable in it. Remember to put a comma after the argument(s) to pull every
+# row with that logic for all columns
 
 sub_df = df[df$column_name_1 == T, ]
 
-#Another way to pull data based on a specific logic from a column (all rows) is to use the SUBSET function
+# Another way to pull data based on a specific logic from a column (all rows) is to use the SUBSET function
 
 sub_df = subset(df, column_name_1 == 'some_value')
+sub_df = subset(df, column_name_1 <= 'some_value')
 
-#Since the sub_df has data that all has some_value in common it often makes sense to not include that column in the new table
-#by using the <select=-> arg
+# Since the sub_df has data that all has some_value in common it often makes sense to not include that column in the new table
+# by using the <select=-> arg
 
 sub_df = subset(df, column_name_1 == 'some_value', select =-column_name_1)
 
-#Of course if you want more complicated logic just add more to the args
+# Of course if you want more complicated logic just add more to the args
 
 sub_df = subset(df, column_name_1 == 'some_value' & column_name_2 == 'some_other_value', select =-column_name_1)
+sub_df = subset(df, column_name_1 == 'some_value' | column_name_ == 'some_other_value', select =-column_name_1)
 
+# Another common subsetting practice is to add a new column based on another column(s) values, often making it a factor like
+# low, medium, high or quintiles and then subsetting the data based on that.
+
+sub_df$column_name_new = cut(sub_df$column_name_1, breaks = c( 0, 500, 1000, max( sub_df$column_name_1 )))
+levels( sub_df$column_name_new ) = c( 'low', 'medium', 'high')
+
+# If you want to delete the row just use <NULL>
