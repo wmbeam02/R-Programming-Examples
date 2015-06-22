@@ -1,0 +1,12 @@
+#Assume column_1 has a rows with date information that looks like: c('20150101CST', '20150102CST', '20150103CST', '20150105CST')
+#and we want to create a new column with the date portion.
+
+df$column_date = substr( df$column_1, 1, 8)
+
+#Where the <1> is the starting point in each cell and the <8> is the ending point. If we had used <3>, <8> it would have ignored
+#the '20' and returned '150101'. I'm using this to demonstrate the handling of column data but this works just as well for 
+#individual character strings, matrix & lists
+
+df$column_date = as.Date(df$column_date, '%Y%m%d')
+
+#See the date folder for more information on POSIXct/strptime and also my GettingData assignment
