@@ -3,5 +3,5 @@ Making a location to save all the helpful snippets of code I've found during my 
 
 #1 Merging data frames by columns
 #2 Merging data by rows - rbind
-
+#3 Stripping partial data from a column
 
