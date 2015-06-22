@@ -1,16 +1,16 @@
-#R documentation ?regex
-#Very nice RegExp table at http://www.endmemo.com/programs/R/grep.php
+# R documentation ?regex
+# Very nice RegExp table at http://www.endmemo.com/programs/R/grep.php
 
-#Let's say we have time data that looks like '30:05' (minutes:seconds) in a column and we want to convert all the rows into 
-#something that is a decimal value.  We can use regular expressions & the sub function to handle this.
+# Let's say we have time data that looks like '30:05' (minutes:seconds) in a column and we want to convert all the rows into 
+# something that is a decimal value.  We can use regular expressions & the sub function to handle this.
 
 df_minutes = (60 * as.numeric( sub( ':.*', '', df_time)) + as.numeric( sub( '[0-9]{1,2,3]:', '', df_time))) / 60
 
-#The first RegExp <':.*', ''> is telling the sub function to take all the values after (and including) the <:> and replace with
-#nothing, as represented by <''> and then multiply what remains(in this case the minute values) by 60 to get the value to seconds
-#The second RegExp <'[0-9]{1,2,3]:', ''> is saying to look for all numbers (0-9) up to the hundreds value <{1,2,3}> and replace
-#with nothing and add the remaining value (in this case the seconds value) to the converted minutes and then take the total 
-#and convert it into a decimalized minute value.
+# The first RegExp <':.*', ''> is telling the sub function to take all the values after (and including) the <:> and replace with
+# nothing, as represented by <''> and then multiply what remains(in this case the minute values) by 60 to get the value to seconds
+# The second RegExp <'[0-9]{1,2,3]:', ''> is saying to look for all numbers (0-9) up to the hundreds value <{1,2,3}> and replace
+# with nothing and add the remaining value (in this case the seconds value) to the converted minutes and then take the total 
+# and convert it into a decimalized minute value.
 
-#The key point is that using the sub function to eliminate the things we don't want versus subbing for the things we do want 
-#is an important concept to understand.
+# The key point is that using the sub function to eliminate the things we don't want versus subbing for the things we do want 
+# is an important concept to understand.
