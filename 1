@@ -1,0 +1,13 @@
+# The <key> argument below is the names of the columns that we want to use to combine these 2 tables
+
+df1=data.frame(key = c('column_1', 'column_3', 'column_5')
+df2=data.frame(key = c('column_1', 'column_2', 'column_5')
+
+# Merge is the function for this. Need table names and <by> a key or just column names
+
+merge(df1, df2, by = c('key'))
+
+# The above code will only give you the data that match.  If you wanted to include data that doesn't match 
+# you would need the <all> arg (all.x referring to df1 and all.y refers to df2)
+
+merge(df1, df2, by = c('key'), all = T)
