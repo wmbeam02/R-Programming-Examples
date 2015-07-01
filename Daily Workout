@@ -8,7 +8,7 @@
 - correlate columns
 - subset df
 - create a custom function and sapply it at least once
-- " grepl "
+- use grepl at least once
 - ggplot2 the df
 - write the resulting csv
 - ?quantmod - read at least one Function description
