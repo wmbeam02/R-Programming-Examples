@@ -1,0 +1,14 @@
+- download data from Quandl
+- set working directory
+- read df
+- attach df
+- format datetime
+- rename columns
+- add a column by factorizing another column's values
+- correlate columns
+- subset df
+- create a custom function and sapply it at least once
+- " grepl "
+- ggplot2 the df
+- write the resulting csv
+- ?quantmod - read at least one Function description
