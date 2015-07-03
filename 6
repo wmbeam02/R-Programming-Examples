@@ -1,5 +1,7 @@
 # First be sure your Date column is formated to a character class when you import it, if you imported it 
-# a factor class then you'll need to add the character class conversion before changing to date
+# a factor class then you'll need to add the character class conversion before changing to date. Pay special 
+# attention to the separator used in the Date info you downloaded, you'll need to include it correctly in your <format>
+# section.
 
 df$Date=as.Date(df$Date, format='%Y/%m/%d')
 df$Date=as.Date(as.character(df$Date, format='%Y/%m/%d')
@@ -7,3 +9,7 @@ df$Date=as.Date(as.character(df$Date, format='%Y/%m/%d')
 # Often the table will have another column with Time of observation handled separately.  To make graphs with continuous 
 # data you will need to merge the Date & Time columns into a new column with the correct formatting (POSIXct). Like this:
 
+df$Date=as.Date(df$Date, format='%d/%m/%Y')
+df.Sub=filter(df, Date >= as.Date('2007-02-01'), Date <= as.Date('2007-02-02')) 
+dfTime=paste0(as.Date(df.Sub$Date), df.Sub$Time)
+df.Sub$DateTime=as.POSIXct(dateTime)
