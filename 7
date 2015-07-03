@@ -1,0 +1,11 @@
+# Often your data won't have header information correct and that will be in the 1st row of the df and you'll be 
+# forced to initially have columns labeled with V1:Vn. Here's 1 way to move those names into the column header and then
+# delete that first row:
+
+colnames(df)=df[1,]
+df=df[-1,]
+
+# Another common thing is wanting to rename only a few columns, here's a couple examples of that:
+
+colnames(df)[3]='The_Perfec_Column_Name!'
+colnames(df0[7:9] = c('Gee', 'H', 'Eye')
