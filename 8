@@ -1,0 +1,7 @@
+# My favorite way of removing columns is:
+
+df = df[ ,!(colnames(df) %in% c('Gee', 'Eye'))]
+
+# Of course the quickest way is to do:
+
+df$column.name = NULL
