@@ -7,3 +7,4 @@ Making a location to save all the helpful snippets of code I've found during my 
 #4 Regular Expression manipulation
 #5 Subsetting
 #6 Datetime Manipulation
+#7 Column Name Handling
