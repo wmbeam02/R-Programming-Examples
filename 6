@@ -1,0 +1,9 @@
+# First be sure your Date column is formated to a character class when you import it, if you imported it 
+# a factor class then you'll need to add the character class conversion before changing to date
+
+df$Date=as.Date(df$Date, format='%Y/%m/%d')
+df$Date=as.Date(as.character(df$Date, format='%Y/%m/%d')
+
+# Often the table will have another column with Time of observation handled separately.  To make graphs with continuous 
+# data you will need to merge the Date & Time columns into a new column with the correct formatting (POSIXct). Like this:
+
