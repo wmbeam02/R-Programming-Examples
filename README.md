@@ -6,3 +6,4 @@ Making a location to save all the helpful snippets of code I've found during my 
 #3 Stripping partial data from a column
 #4 Regular Expression manipulation
 #5 Subsetting
+#6 Datetime Manipulation
