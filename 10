@@ -1,0 +1,19 @@
+www.louisaslett.com/RStudio_AMI/
+Amazon AMI(Amazon Machine Images)
+
+Step 7 - Edit Security Groups
+- add HTTP to include Port Range 80
+- review and launch
+- create a key pair
+- once it has installed the instance copy the DNS: for example< ec2-54-184-111-201.us.amzonaws.com > 
+- paste it into a tab and sign in with <username: rstudio> & <password: rstudio>
+- need to change the password once RStudio opens inside the Source window <pwd = "YourPasswordHere"> then run the Source
+- you may not get a confirmation that the password changed (in video it says pwd unchanged but it did change) just test it
+
+Upload/Export:
+- bottom right pane in Studo has an <Upload> tab, Choose File.  You can selected a file that is zipped and AWS will 
+  migrate and unzip it for you, very nice.
+- to Export select the file (check box) then choose <More> & then <Export> 
+
+Sign Out & Shut Down AWS
+- in Instance Dashboard select <Actions> and choose either <Terminate> or if you will want it later <Stop>
