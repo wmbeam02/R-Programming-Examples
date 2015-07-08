@@ -1,0 +1,18 @@
+# For Looping:
+# Here are some common counter line commands
+
+for i in 1:n{ code }
+for (i in 1:length(df)) { code }
+for (i in seq(df) { code }
+# Most common problem is remembering to add [i] to the left side of the equation you're looping over.
+
+# While Looping:
+# Include a "break" of some sort - see #4 below.
+
+# A few programmer related thoughts on looping:
+# 1. Do only the absolute necessary amount of coding inside the loop to help with speed, if something can be done 
+# after the fact on the completed information generated data then keep it out.
+# 2. Use the <apply> function if possible, it utilizes C behind the scenes to do looping much faster than looping in R.by
+# 3. If I'm going to be doing anything inside the loop that has the potential to grow in size over repeats consider putting
+# in a numeric cap size like this: <(something.squared=numeric length=10)>
+# 4. Some "quit" commands to keep in mind are: <break>, <stop>, <quit>, <stopifnot>, <browser> 
