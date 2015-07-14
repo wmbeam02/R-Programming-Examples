@@ -13,3 +13,11 @@ df$Date=as.Date(df$Date, format='%d/%m/%Y')
 df.Sub=filter(df, Date >= as.Date('2007-02-01'), Date <= as.Date('2007-02-02')) 
 dfTime=paste0(as.Date(df.Sub$Date), df.Sub$Time)
 df.Sub$DateTime=as.POSIXct(dateTime)
+
+# The <lubridate> Package makes working with Dates 
+library( lubridate )
+df$Year=year( df$Date )
+df$Month=month( df$Date )
+# Creating new columns (df$Year & df$Month) with the lubridate functions <year> & <month>. The month function returns a 
+# numeric value but can be converted to month names with the <label> argument:
+df$Month=month( df$Date, label=T )
