@@ -13,3 +13,4 @@ Making a location to save all the helpful snippets of code I've found during my 
 #10 AWS Rstudio - Manuel Amunategui
 #11 Working Files Too Large for RAM
 #12 Looping
+#13 GGPlot2
