@@ -1,0 +1,15 @@
+# Here's a bunch of examples to reference.  Advance graphinc reference is this website: http://rgraphgallery.blogspot.com/
+# My initial observation is that (unlike R in general) Hadley doesn't like the plural of words, color instead of colors (even
+# though there are usually multiple colors in a chart), shape vs. shapes, geom_point vs. geom_points (lots of points in 
+# scatterplots).
+
+ggplot(df) + geom_histogram( aes( x=column1 ), binwidth=10 )
+ggplot(df) + geom_density( aes( x=column1 ), fill='grey50' )
+ggplot(df, aes( x=column1, y=column2 ) + geom_point()
+ggplot(df, aes( x=column1, y=column2 ) + geom_point( aes( color=column3, shape=column4 ))
+ggplot(df, aes( y=column1, x=1 ) + geom_boxplot()
+ggplot(df, aes( y=column1, x=column2 ) + geom_boxplot()
+# Violin shapes give more clarity to what is being represented in the boxplot theme
+ggplot(df, aes( y=column1, x=column2 ) + geom_violin()
+ggplot(df, aes( y=column1, x=column2 ) + geom_jitter() # Adds some variablility to <geom_point>
+ggplot(df, aes( y=column1, x=column2 ) + geom_line()
