@@ -14,7 +14,7 @@ ggplot( df, aes( y=column1, x=column2 ) + geom_violin()
 ggplot( df, aes( y=column1, x=column2 ) + geom_jitter() # Adds some variablility to <geom_point>
 ggplot( df, aes( y=column1, x=column2 ) + geom_line()
 # The library <scales> is a part of ggplot but it has to be loaded into the code separately.
-# I could have easily mentioned <scales> it in my Date Manipulation section because it handles those values well but
+# I could have easily mentioned <scales> in my Date Manipulation section because it handles those values well but
 # it also has some great funcitons for making the manipulation of charts very easy (exp to log, log back to exp & tons more)
 
 ggplot( df, aes( y=column1, x=column2 ) + geom_line( aes( color=factor( df$Year ) + scale_color_discrete( name='Year' )
