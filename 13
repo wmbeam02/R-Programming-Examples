@@ -3,13 +3,24 @@
 # though there are usually multiple colors in a chart), shape vs. shapes, geom_point vs. geom_points (lots of points in 
 # scatterplots).
 
-ggplot(df) + geom_histogram( aes( x=column1 ), binwidth=10 )
-ggplot(df) + geom_density( aes( x=column1 ), fill='grey50' )
-ggplot(df, aes( x=column1, y=column2 ) + geom_point()
-ggplot(df, aes( x=column1, y=column2 ) + geom_point( aes( color=column3, shape=column4 ))
-ggplot(df, aes( y=column1, x=1 ) + geom_boxplot()
-ggplot(df, aes( y=column1, x=column2 ) + geom_boxplot()
+ggplot( df ) + geom_histogram( aes( x=column1 ), binwidth=10 )
+ggplot( df ) + geom_density( aes( x=column1 ), fill='grey50' )
+ggplot( df, aes( x=column1, y=column2 ) + geom_point()
+ggplot( df, aes( x=column1, y=column2 ) + geom_point( aes( color=column3, shape=column4 ))
+ggplot( df, aes( y=column1, x=1 ) + geom_boxplot()
+ggplot( df, aes( y=column1, x=column2 ) + geom_boxplot()
 # Violin shapes give more clarity to what is being represented in the boxplot theme
-ggplot(df, aes( y=column1, x=column2 ) + geom_violin()
-ggplot(df, aes( y=column1, x=column2 ) + geom_jitter() # Adds some variablility to <geom_point>
-ggplot(df, aes( y=column1, x=column2 ) + geom_line()
+ggplot( df, aes( y=column1, x=column2 ) + geom_violin()
+ggplot( df, aes( y=column1, x=column2 ) + geom_jitter() # Adds some variablility to <geom_point>
+ggplot( df, aes( y=column1, x=column2 ) + geom_line()
+# The library <scales> is a part of ggplot but it has to be loaded into the code separately.
+# I could have easily mentioned <scales> it in my Date Manipulation section because it handles those values well but
+# it also has some great funcitons for making the manipulation of charts very easy (exp to log, log back to exp & tons more)
+
+ggplot( df, aes( y=column1, x=column2 ) + geom_line( aes( color=factor( df$Year ) + scale_color_discrete( name='Year' )
++ scale_y_continuous( labels=comma ) + labs( title='Money Flow Over Time', x='Month', y='Money Flow' ) + theme( axis.text.x=
+element_text( angle=90, hjust=1 ))
+# Need to change the Year column to a factor so that ggplot will handle it correctly. The last example introduced <theme>
+# and I'll put more focus on that part of graphing a little further down, want to focus on thumbnail graphs next.
+
+
