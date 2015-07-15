@@ -20,7 +20,14 @@ ggplot( df, aes( y=column1, x=column2 ) + geom_line()
 ggplot( df, aes( y=column1, x=column2 ) + geom_line( aes( color=factor( df$Year ) + scale_color_discrete( name='Year' )
 + scale_y_continuous( labels=comma ) + labs( title='Money Flow Over Time', x='Month', y='Money Flow' ) + theme( axis.text.x=
 element_text( angle=90, hjust=1 ))
-# Need to change the Year column to a factor so that ggplot will handle it correctly. The last example introduced <theme>
-# and I'll put more focus on that part of graphing a little further down, want to focus on thumbnail graphs next.
+# Need to change the Year column to a factor so that ggplot will handle it correctly. 
 
+# Library <ggthemes> - allows you to add prebuilt themes on top of your graphing
+ggplot( df, aes( y=column1, x=column2 ) + geom_line() + theme_wsj()
+ggplot( df, aes( y=column1, x=column2 ) + geom_line() + theme_economist() + scale_colour_economist()
+ggplot( df, aes( y=column1, x=column2 ) + geom_line() + theme_excel() + scale_colour_excel()
+
+# Facet_wrap breaks up the plot by discreet units and show them in a grid
+ggplot( df, aes( y=column1, x=column2 ) + geom_point( aes( color=column3 )) + facet_wrap( ~column3 ) 
+ggplot( df, aes( y=column1, x=column2 ) + geom_point( aes( color=column3 )) + facet_grid( column5~column5 )
 
