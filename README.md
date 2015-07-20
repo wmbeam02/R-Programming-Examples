@@ -16,3 +16,4 @@ Making a location to save all the helpful snippets of code I've found during my 
 #13 GGPlot2
 #14 Directory Management with list.files function
 #15 Caching
+#16 Loading Packages not on CRAN
