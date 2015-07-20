@@ -1,0 +1,54 @@
+# function that takes a directory of data files and a threshold arg of
+# complete cases (non-NA data) and calculates the correlation (cor function)
+# between 2 inputs, in this case "sulfates" and "nitrates". 
+
+corr=function(directory="specdata", threshold=0){
+  do=list.files(directory, pattern="*.csv", full.names=TRUE)
+  re=numeric()
+  if (threshold>332){
+    return
+  }
+  for(i in 1:332) {
+    if(nrow(na.omit(read.csv(do[i]))) >= threshold) {
+      me=na.omit(read.csv(do[i]))
+      re=cor(row[me, ]$nitrate, row[me, ]$sulfate))
+    }
+    else {
+      next
+    }
+    na.omit(re)
+  }
+  View(re)
+}
+
+# function that reads a directory full of files and reports the number (nrow) of 
+# completely observed cases (no NA present) in each data file present.
+
+complete=function(directory="specdata", id = 1:332){
+  do=list.files(directory, pattern="*.csv", full.names=TRUE)
+  nobs=numeric()
+  for(i in id) {
+    # need to loop over the rows based on id and concatenated
+    # the results where NA is not present.
+    nobs=c(nobs, nrow(na.omit(read.csv(do[i]))))
+  }
+    # building the frame to present the data from the loop
+    re=data.frame("id" = id, "nobs" = nobs)
+    re
+  }
+  
+# function built to loop over all files in a directory in current working directory, based
+# on specific args and to return (in this case) a mean value.
+
+pollutantmean=function(directory="specdata", pollutant, id = 1:332){
+  do=list.files(directory, pattern="*.csv", full.names=TRUE) 
+  re=data.frame()
+  # originally tried combining all the files into one data.frame but 
+  # it wouldn't build because of uneven row values.
+  for (i in id) {
+    re=rbind(re, read.csv(do[i]))
+    i
+  }
+  sub1.re=subset(re, select=pollutant)
+  colMeans(sub1.re, na.rm = TRUE)
+}
