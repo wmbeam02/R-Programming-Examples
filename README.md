@@ -14,3 +14,4 @@ Making a location to save all the helpful snippets of code I've found during my 
 #11 Working Files Too Large for RAM
 #12 Looping
 #13 GGPlot2
+#14 Directory Management with list.files function
