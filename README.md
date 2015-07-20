@@ -15,3 +15,4 @@ Making a location to save all the helpful snippets of code I've found during my 
 #12 Looping
 #13 GGPlot2
 #14 Directory Management with list.files function
+#15 Caching
