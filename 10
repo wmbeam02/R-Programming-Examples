@@ -7,7 +7,7 @@ Step 7 - Edit Security Groups
 - create a key pair
 - once it has installed the instance copy the DNS: for example< ec2-54-184-111-201.us.amzonaws.com > 
 - paste it into a tab and sign in with <username: rstudio> & <password: rstudio>
-- need to change the password once RStudio opens inside the Source window <pwd = "YourPasswordHere"> then run the Source
+- once it loads in, run ,library('RStudio.AMI')> and then run <passwd()>, you'll be prompted to enter existing and new passwd
 - you may not get a confirmation that the password changed (in video it says pwd unchanged but it did change) just test it
 
 Upload/Export:
