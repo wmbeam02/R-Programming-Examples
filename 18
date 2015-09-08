@@ -1,1 +1,11 @@
+library(RMySQL)
 
+conn=dbConnect( MySQL(), user='root', password='password', host='localhost' )
+dbSendQuery( conn, 'CREATE DATABASE test' )
+dbSendQuery( conn, "USE test" )
+conn=dbConnect( MySQL(), user='root', password='password', host='localhost', dbname='test' )
+dbSendQuery( conn, 'drop table if exists emini' )
+conn=dbConnect( MySQL(), user='root', password='password', host='localhost', dbname='test' )
+dbSendQuery( conn, "CREATE TABLE IF NOT EXISTS raw (id INT NOT NULL AUTO_INCREMENT, time CHAR(12), last DECIMAL(6,2), volume INT,
+PRIMARY KEY(id))") 
+dbWriteTable( conn, 'emini1500', emini1500, row.names=F )
