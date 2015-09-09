@@ -7,7 +7,7 @@ Step 7 - Edit Security Groups
 - once it has installed the instance copy the DNS: for example< ec2-54-184-111-201.us.amzonaws.com > 
 - paste it into a tab and sign in with <username: rstudio> & <password: rstudio>
 - once it loads in, run ,library('RStudio.AMI')> and then run <passwd()>, you'll be prompted to enter existing and new passwd
-- you may not get a confirmation that the password changed (in video it says pwd unchanged but it did change) just test it
+- you may not get a confirmation that the password changed.
 
 Upload/Export:
 - bottom right pane in Studo has an <Upload> tab, Choose File.  You can selected a file that is zipped and AWS will 
